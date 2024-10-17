@@ -3,24 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>This is my first file</title>
+    <title>Document</title>
 </head>
 <body>
-    <table border="1" width="100%">
-        <tbody>
-            <tr><td colspan="2">Header</td></tr>
-            <tr>
-            <td>
-                <a href="login.html" target="myFrame">Login</a>
-                <br>
-                <a href="registration.html" target="myFrame">Registration</a>
-            </td>
-            <td>
-                <iframe name="myFrame" height="400" width="900" src="images/360_F_501285045_Pyb8Lsr7yTK2j0q4kUsBWCPgW2Yr915A.jpg"></iframe>
-            </td>
-            </tr>
-            <tr><td colspan="2">Footer</td></tr>
-        </tbody>
-    </table>
+   <script>
+    let div = document.createElement("div");
+    div.id="parent";
+    div.style.width="200px";
+    div.style.height="200px";
+
+    let button=document.createElement("button");
+    button.textContent="Click Me"
+    button.id="btn"
+    document.body.appendChild(button);
+
+    let para=document.createElement("p");
+    para.textContent="-----Insert Here--------";
+    para.id="para";
+    document.body.appendChild(para);
+
+    div.appendChild(button);
+    div.appendChild(para);
+    document.body.appendChild(div);
+    
+    document.getElementById("parent").addEventListener("click",
+     function(event) {
+
+        if(event.target.tagName=="BUTTON"){
+            alert(event.target.innerHTML + "was clicked");
+        }
+        if(event.target.tagName=="P"){
+            event.ttarget.style.color = "blue";
+        } 
+    })
+   </script> 
 </body>
 </html>
